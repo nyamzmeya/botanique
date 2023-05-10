@@ -3,7 +3,7 @@ import { font } from "./Roboto-Regular-normal.js"; // шрифт для jspdf
 
 // данные пользователя
 async function getUser() {
-  const data = await fetch("http://localhost:3000/user", {
+  const data = await fetch("/user", {
     method: "GET",
   });
   if (!data.ok) {
@@ -15,7 +15,7 @@ async function getUser() {
 
 // поменять статус прибора
 async function changeStatus(id, new_status) {
-  const data = await fetch("http://localhost:3000/status", {
+  const data = await fetch("/status", {
     method: "PATCH",
     body: JSON.stringify({ id: id, status: new_status }),
   });
